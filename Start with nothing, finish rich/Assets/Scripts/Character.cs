@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Character : MonoBehaviour
+public class Character : Interactable
 {
     public CanvasGroup CanvasGroup;
     public Text text;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         text = FindObjectOfType<Text>();
     }
@@ -21,8 +21,13 @@ public class Character : MonoBehaviour
         
     }
 
-    public void Interact()
+    override public void  Interact()
     {
         text.text = "Hey, you! Get out of here!";
+    }
+
+    void OnMouseDown()
+    {
+        Interact();
     }
 }
