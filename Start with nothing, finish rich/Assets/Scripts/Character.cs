@@ -12,6 +12,7 @@ public class Character : Interactable
     // Start is called before the first frame update
     protected override void Start()
     {
+        base.Start();
         text = FindObjectOfType<Text>();
     }
 
@@ -23,11 +24,8 @@ public class Character : Interactable
 
     override public void  Interact()
     {
-        text.text = "Hey, you! Get out of here!";
+        message.text = "Hey, you! Get out of here!";
     }
 
-    void OnMouseDown()
-    {
-        Interact();
-    }
+    
 }
