@@ -21,7 +21,7 @@ public abstract class ThingManager<T> : MonoBehaviour where T:ScriptableObject
 
     private void Awake()
     {
-        HideMenu();
+        if(Menu)HideMenu();
     }
     public void ChangeMenuState()
     {
@@ -52,9 +52,12 @@ public abstract class ThingManager<T> : MonoBehaviour where T:ScriptableObject
     public void Add(T thing)
     {
         Things.Add(thing);
-        GameObject cg = Instantiate(prefub);
-        cg.transform.SetParent(Content.transform);
-        Fill(cg,thing);
+        if (prefub)
+        {
+            GameObject cg = Instantiate(prefub);
+            cg.transform.SetParent(Content.transform);
+            Fill(cg, thing);
+        }
     }
 
     protected abstract void Fill(GameObject gameObject, T scriptableObject);

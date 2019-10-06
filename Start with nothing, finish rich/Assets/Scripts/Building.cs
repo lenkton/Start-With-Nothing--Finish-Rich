@@ -8,6 +8,5 @@ public class Building : Interactable
     public override void Interact()
     {
         base.Interact();
-        message.text = "You cannot ented this building for now";
     }
 }

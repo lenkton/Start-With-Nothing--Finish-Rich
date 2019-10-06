@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class Box : Interactable
 {
-    private StatsController stats;
-    private ItemManager itemManager;
+    
     [SerializeField]
     private int money=0;
     [SerializeField]
@@ -18,8 +17,6 @@ public class Box : Interactable
     protected override void Start()
     {
         base.Start();
-        stats = FindObjectOfType<StatsController>();
-        itemManager = FindObjectOfType<ItemManager>();
     }
 
     public void Loot()
