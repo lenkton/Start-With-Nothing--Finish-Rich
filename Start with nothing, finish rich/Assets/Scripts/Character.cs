@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class Character : Interactable
 {
-    public CanvasGroup CanvasGroup;
+    
+
     public Text text;
 
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class Character : Interactable
     {
         base.Start();
         text = FindObjectOfType<Text>();
+        
     }
 
     // Update is called once per frame
@@ -24,7 +26,7 @@ public class Character : Interactable
 
     override public void  Interact()
     {
-        message.text = "Hey, you! Get out of here!";
+        base.Interact();
     }
 
     

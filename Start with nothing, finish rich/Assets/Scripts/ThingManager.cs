@@ -63,4 +63,6 @@ public abstract class ThingManager<T> : MonoBehaviour where T:ScriptableObject
     {
         Things.Remove(thing);
     }
+
+    
 }
