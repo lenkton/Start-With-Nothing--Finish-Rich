@@ -1,20 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ItemManager : MonoBehaviour
+public class ItemManager : ThingManager<Item>
 {
-    private List<Item> items;
 
-    // Start is called before the first frame update
-    void Start()
+    protected override void Fill(GameObject gameObject, Item scriptableObject)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Text text = gameObject.GetComponentInChildren<Text>();
+        text.text = scriptableObject.name;
     }
 }

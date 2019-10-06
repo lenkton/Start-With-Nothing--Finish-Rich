@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+    private SpriteRenderer sprite;
+
     public float speed = .01f;
+    private bool isLookingLeft = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -31,7 +34,19 @@ public class Controller : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 pos = transform.position;
-        pos.x += Input.GetAxis("Horizontal")*speed;
+        float d = Input.GetAxis("Horizontal");
+        pos.x += d*speed;
         transform.position = pos;
+        if (isLookingLeft && (d > 0))
+        {
+            isLookingLeft = false;
+            sprite.flipX = false;
+        }
+        else if (d<0)
+        {
+            isLookingLeft = !isLookingLeft;
+            isLookingLeft = true;
+            sprite.flipX = true;
+        }
     }
 }

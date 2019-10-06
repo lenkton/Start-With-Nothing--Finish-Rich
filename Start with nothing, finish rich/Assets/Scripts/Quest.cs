@@ -7,11 +7,11 @@ using UnityEngine;
 public class Quest : ScriptableObject
 {
     [SerializeField]
-    private string  questName;
+    private string  questName="";
     [SerializeField][MultilineAttribute(5)]
-    private string  description;
+    private string  description="";
     [SerializeField]
-    private int     reward;
+    private int     reward=0;
 
     public string QuestName
     {
