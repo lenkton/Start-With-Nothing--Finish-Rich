@@ -6,14 +6,13 @@ public class SceneChanger:MonoBehaviour
 {
     [SerializeField]
     private Transform player;
-    [SerializeField]
-    private Transform shop;
+    
     [SerializeField]
     private Transform CharacterLayer;
-    public void GoToShop()
+    public void GoTo(Transform scene)
     {
         Vector3 pos = player.position;
-        pos.z = shop.position.z + CharacterLayer.position.z;
+        pos.z = scene.position.z + CharacterLayer.position.z;
         player.position = pos;
     }
 }
